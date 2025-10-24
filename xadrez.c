@@ -6,28 +6,56 @@
 
 int main() {
     // Nível Novato - Movimentação das Peças
-    printf("Desafio de movimentos de peças de xadrez - Nível Novato\n\n")
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
     int i = 0;
     char escolhapeça;
-
+    int opcaoValida;
+    printf("Desafio de movimentos de peças de xadrez - Nível Novato\n\n");
+    // Menu para selecionar qual peça o usuário deseja usar. uso de menu switch
+do{
+    opcaoValida = 1; //assume que as opções são validas
     printf("Seleção de peças de Xadrez\n");
     printf("B - Bispo\n");
     printf("R - Rainha\n");
     printf("T - Torre\n");
     printf("Escolha qual sua peça: ");
-    scanf("%c", &escolhapeça);
+    scanf(" %c", &escolhapeça);
 
     switch(escolhapeça)
     {
-    case "B":
-    case "b":
+    case 'B':
+    case 'b':
+        printf("Peça escolhida: Bispo\n");
         for(i = 0; i < 5; i++){
-            printf("Direita"); printf("Cima")
+            printf("Direita"); printf("Cima\n");
         }
+        break;
 
+    case 'R':
+    case 'r':
+        printf("Peça escolhida: Rainha\n");
+        do
+        {
+            printf("esquerda\n");
+            i++;
+        } while(i < 8);
+        break;
+
+    case 'T':
+    case 't':
+        printf("Peça escolhida: Torre\n");
+        while (i < 5)
+        {
+            printf("direita\n");
+            i++;
+        }
+        break;
+    default:
+        printf("\nPeça nâo cadastrada! Retornando ao menu de seleção\n");
+        opcaoValida = 0; //assume que a opção é inválida
+        break;
     }
-    
+} while(opcaoValida == 0);
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
