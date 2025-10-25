@@ -10,19 +10,24 @@ int main() {
     int i = 0;
     char escolhapeça;
     int opcaoValida;
+    int cavalomove = 1;
     printf("Desafio de movimentos de peças de xadrez - Nível Novato\n\n");
     // Menu para selecionar qual peça o usuário deseja usar. uso de menu switch
+    //Uso de 'do-while' para repetir o menu em caso de 'default'
 do{
     opcaoValida = 1; //assume que as opções são validas
     printf("Seleção de peças de Xadrez\n");
     printf("B - Bispo\n");
     printf("R - Rainha\n");
     printf("T - Torre\n");
+    printf("C - Cavalo\n");
     printf("Escolha qual sua peça: ");
     scanf(" %c", &escolhapeça);
 
     switch(escolhapeça)
     {
+    // Implementação de Movimentação do Bispo
+    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
     case 'B':
     case 'b':
         printf("Peça escolhida: Bispo\n");
@@ -31,6 +36,8 @@ do{
         }
         break;
 
+    // Implementação de Movimentação da Rainha
+    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda. 
     case 'R':
     case 'r':
         printf("Peça escolhida: Rainha\n");
@@ -41,6 +48,8 @@ do{
         } while(i < 8);
         break;
 
+    // Implementação de Movimentação da Torre
+    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
     case 'T':
     case 't':
         printf("Peça escolhida: Torre\n");
@@ -50,6 +59,20 @@ do{
             i++;
         }
         break;
+
+    // Nível Aventureiro - Movimentação do Cavalo
+    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
+    // Um loop pode representar a movimentação horizontal e outro vertical.
+    case 'C':
+    case 'c':
+        while (cavalomove--)
+        {
+            for(i = 0; i < 2; i++){
+                printf("Baixo\n");
+            }
+            printf("Esquerda\n");
+        }
+        break;
     default:
         printf("\nPeça nâo cadastrada! Retornando ao menu de seleção\n");
         opcaoValida = 0; //assume que a opção é inválida
@@ -57,23 +80,7 @@ do{
     }
 } while(opcaoValida == 0);
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-
-
-
-
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
