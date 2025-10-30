@@ -4,6 +4,33 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+// Nível Mestre - Funções Recursivas e Loops Aninhados
+// Sugestão: Substitua as movimentações das peças por funções recursivas.
+// Exemplo: Crie uma função recursiva para o movimento do Bispo.
+void moverbispo(int casas){
+    if(casas > 0){
+        printf("Direita/Cima\n");
+        moverbispo(casas - 1);
+    }
+    
+}
+
+void moverrainha(int casas){
+    if(casas > 0){
+        printf("Esquerda\n");
+        moverrainha(casas - 1);
+    }
+    
+}
+
+void movertorre(int casas){
+    if(casas > 0){
+        printf("Direita\n");
+        movertorre(casas - 1);
+    }
+    
+}
+
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -31,9 +58,7 @@ do{
     case 'B':
     case 'b':
         printf("Peça escolhida: Bispo\n");
-        for(i = 0; i < 5; i++){
-            printf("Direita"); printf("Cima\n");
-        }
+        moverbispo(5);
         break;
 
     // Implementação de Movimentação da Rainha
@@ -41,11 +66,7 @@ do{
     case 'R':
     case 'r':
         printf("Peça escolhida: Rainha\n");
-        do
-        {
-            printf("esquerda\n");
-            i++;
-        } while(i < 8);
+        moverrainha(8);
         break;
 
     // Implementação de Movimentação da Torre
@@ -53,11 +74,7 @@ do{
     case 'T':
     case 't':
         printf("Peça escolhida: Torre\n");
-        while (i < 5)
-        {
-            printf("direita\n");
-            i++;
-        }
+        movertorre(5);
         break;
 
     // Nível Aventureiro - Movimentação do Cavalo
@@ -65,12 +82,12 @@ do{
     // Um loop pode representar a movimentação horizontal e outro vertical.
     case 'C':
     case 'c':
-        while (cavalomove--)
-        {
-            for(i = 0; i < 2; i++){
-                printf("Baixo\n");
-            }
-            printf("Esquerda\n");
+        printf("Peça escolhida: Cavalo\n");
+        for(i = 0; i < 1; i++){
+            for(int j = 0; j < 2; j++){
+            printf("Cima\n");
+        }
+        printf("Direita\n");
         }
         break;
     default:
